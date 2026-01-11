@@ -1,36 +1,27 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mini SaaS Dashboard
 
-## Getting Started
+A simple mini SaaS dashboard built with **Next.js**, **React**, **Zustand**, and **Tailwind CSS**.  
+The project demonstrates authentication, profile management, dashboard metrics, charts, and theme toggling.
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Decisions & Trade-offs
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+State Management:
+Used Zustand instead of Redux for simplicity, minimal boilerplate, and easier state sharing across pages.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Authentication:
+Authentication is mocked using localStorage and Zustand persistence to simulate real-world login behavior without a backend.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Profile Updates:
+Profile data is stored globally in Zustand so changes in Settings immediately reflect on the Dashboard and Profile pages.
 
-## Learn More
+Theme Handling:
+Implemented light/dark mode using a global theme store and localStorage for persistence across refreshes.
 
-To learn more about Next.js, take a look at the following resources:
+Charts & Metrics:
+Metrics and charts use mock + API data (DummyJSON) to demonstrate data visualization without overengineering.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Validation:
+Client-side form validation was added to improve UX while keeping the implementation simple and readable.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+https://mini-saas-dashboard-beta.vercel.app
